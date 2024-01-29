@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookLibrary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='header.css') }}">
+    {% block style %}{% endblock %}
+</head>
+<body>
+    <div class="header">
+        <ul class="header-left">
+            <li class="logo"><a href="/">Book Library</a></li>
+        </ul>
+
+        <ul class="header-right">
+            <li><a href="/Create">Create</a></li>
+            <li><a href="/">View</a></li>
+        </ul>
+    </div>
+
+    {% block Table %} {% endblock %}
+    
+</body>
+</html>

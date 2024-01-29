@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='booklist.css') }}">
+{% endblock %}
+
+{% block Table %}
+    <table>
+        <thead>
+            <tr><th>Author</th><th>Title</th><th>Published</th></tr>
+        </thead>
+        <tbody>
+            <div class="book-table">
+                {% for book in books %}
+                    <tr>
+                        <td>{{ book.author }}</td>
+                        <td>{{ book.title }}</td>
+                        <td>{{ book.published }}</td>
+                    </tr>
+                {% endfor %}
+            </div>
+        </tbody>
+    </table>
+{% endblock %}
