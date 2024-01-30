@@ -2,6 +2,10 @@
 
 {% block style %}
     <link rel="stylesheet" href="{{ url_for('static', filename='booklist.css') }}">
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
 {% endblock %}
 
 {% block Table %}
@@ -16,9 +20,13 @@
                         <td>{{ book.author }}</td>
                         <td>{{ book.title }}</td>
                         <td>{{ book.published }}</td>
+                        <td><a href="{{ url_for('edit', id= book.id ) }}"><i class="material-icons">edit</i></a></td>
+                        
+                        <td><a href="{{ url_for('delete', id= book.id ) }}"><i class="material-icons">delete</i></a></td>  
                     </tr>
                 {% endfor %}
             </div>
         </tbody>
     </table>
 {% endblock %}
+ 
