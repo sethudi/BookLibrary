@@ -67,12 +67,22 @@ def create():
         cursor = connection.cursor()
 
         # SQL statement to get all books
-        insert_query = f'''
-            insert into books (author, title, published)
-            values
-            ('{author}', '{title}', '{published}');
+        identifier = request.form.get('identifier')
+        print(identifier)
+        if identifier:
+            insert_query = f'''
+                update books set author ='{author}', title ='{title}', published ='{published}'
+                where id = {identifier};
 
-        '''
+            '''
+        else:
+            insert_query = f'''
+                insert into books (author, title, published)
+                values
+                ('{author}', '{title}', '{published}');
+
+            '''
+
         cursor.execute(insert_query)
         connection.commit()
         connection.close()

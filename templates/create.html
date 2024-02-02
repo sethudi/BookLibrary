@@ -8,6 +8,7 @@
     <div>
         <form action="/create" method="post">
             {% if row %}
+                <input type="hidden" name="identifier" value="{{row[0]}}"/>
                 <label htmlFor="author">Author:</label>
                 <input type="text" name="author" id="author" value="{{row[1]}}"/>
                 <label htmlFor="title">Title:</label>
